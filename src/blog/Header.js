@@ -6,6 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import LoginButton from '../LoginButton';
 
 function Header(props) {
   const { sections, title } = props;
@@ -27,9 +28,7 @@ function Header(props) {
         <IconButton>
           <SearchIcon />
         </IconButton>
-        <Button variant="outlined" size="small">
-          Sign up
-        </Button>
+        <LoginButton/>
       </Toolbar>
       <Toolbar
         component="nav"

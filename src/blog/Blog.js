@@ -17,16 +17,14 @@ import Footer from './Footer';
 import Header from './Header';
 
 const sections = [
-  { title: 'Technology', url: '#' },
-  { title: 'Design', url: '#' },
-  { title: 'Culture', url: '#' },
-  { title: 'Business', url: '#' },
-  { title: 'Politics', url: '#' },
-  { title: 'Opinion', url: '#' },
-  { title: 'Science', url: '#' },
-  { title: 'Health', url: '#' },
-  { title: 'Style', url: '#' },
-  { title: 'Travel', url: '#' },
+  { title: 'All Engineering Topics', url: '#' },
+  { title: 'Cloud', url: '#' },
+  { title: 'Message Streaming', url: '#' },
+  { title: 'Backend', url: '#' },
+  { title: 'Web Frontend', url: '#' },
+  { title: 'Mobile', url: '#' },
+  { title: 'Data Science and Databases', url: '#' },
+  { title: 'More...', url: '#' }
 ];
 
 const mainFeaturedPost = {
