@@ -1,0 +1,28 @@
+.flex-container {
+   display: flex;
+   flex-flow: row wrap;
+   /* justify-content: space-around; */
+   padding: 100px;
+   margin: 0;
+   list-style: none;
+   border: 1px solid tomato;
+
+}
+
+.flex-container > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.header {
+  border: 1px solid tomato;
+}
+
+.footer {
+  background: lightgreen;
+}
+
+.main {
+  text-align: left;
+  background: deepskyblue;
+}
