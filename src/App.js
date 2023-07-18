@@ -22,8 +22,8 @@ const App = () => {
   }
   return (
     <Router >
-      <div id="app" className="d-flex flex-column h-100">
-        <Container className="flex-grow-1 mt-5">
+      <div id="app" >
+        <Container >
           <Routes>
             <Route path="/" exact element={<Home/>} />
             <Route path="/profile" element={<Profile/>} />
