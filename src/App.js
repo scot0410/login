@@ -5,7 +5,6 @@ import { Container } from "reactstrap";
 import Home from './home/Home';
 import Profile from './profile/Profile';
 import { createBrowserHistory } from 'history';
-import Footer from './footer/Footer';
 const history = createBrowserHistory();
 
 
@@ -29,7 +28,6 @@ const App = () => {
             <Route path="/profile" element={<Profile/>} />
           </Routes>
         </Container>
-        <Footer />
       </div>
     </Router>
   );
