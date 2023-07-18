@@ -2,9 +2,9 @@ import './App.css';
 import { useAuth0 } from "@auth0/auth0-react";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import { Container } from "reactstrap";
-import Home from './home/Home';
 import Profile from './profile/Profile';
 import { createBrowserHistory } from 'history';
+import Blog from './blog/Blog';
 const history = createBrowserHistory();
 
 
@@ -24,7 +24,7 @@ const App = () => {
       <div id="app" >
         <Container >
           <Routes>
-            <Route path="/" exact element={<Home/>} />
+            <Route path="/" exact element={<Blog/>} />
             <Route path="/profile" element={<Profile/>} />
           </Routes>
         </Container>
