@@ -6,10 +6,18 @@ import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import LoginButton from '../LoginButton';
+import LoginButton from '../login/LoginButton';
+import ProfileIcon from '../account/ProfileIcon';
+import { useAuth0 } from "@auth0/auth0-react";
 
-function Header(props) {
+const Header = (props) => {
   const { sections, title } = props;
+  const {
+    user,
+    isAuthenticated,
+    loginWithRedirect,
+    logout,
+  } = useAuth0();
 
   return (
     <React.Fragment>
@@ -28,7 +36,7 @@ function Header(props) {
         <IconButton>
           <SearchIcon />
         </IconButton>
-        <LoginButton/>
+        { isAuthenticated ? <ProfileIcon /> : <LoginButton /> }
       </Toolbar>
       <Toolbar
         component="nav"
