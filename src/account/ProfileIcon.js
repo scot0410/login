@@ -6,13 +6,19 @@ import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import Avatar from '@mui/material/Avatar';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ProfileIcon = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+    const {
+        user,
+        isAuthenticated,
+        loginWithRedirect,
+        logout,
+    } = useAuth0();
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -25,9 +31,17 @@ const ProfileIcon = () => {
         setAnchorElNav(null);
     };
 
-    const handleCloseUserMenu = () => {
+    const handleCloseUserMenu = (setting) => {
+        if (setting == "Logout") logoutWithRedirect();
         setAnchorElUser(null);
     };
+
+    const logoutWithRedirect = () =>
+        logout({
+            logoutParams: {
+                returnTo: window.location.origin,
+            }
+        });
 
     return (
         <Box sx={{ flexGrow: 0 }}>
@@ -53,7 +67,7 @@ const ProfileIcon = () => {
                 onClose={handleCloseUserMenu}
             >
                 {settings.map((setting) => (
-                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                    <MenuItem key={setting} onClick={() => handleCloseUserMenu(setting)}>
                         <Typography textAlign="center">{setting}</Typography>
                     </MenuItem>
                 ))}
