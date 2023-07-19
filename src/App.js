@@ -5,6 +5,7 @@ import { Container } from "reactstrap";
 import Profile from './profile/Profile';
 import { createBrowserHistory } from 'history';
 import Blog from './blog/Blog';
+import Post from './posts/Post';
 const history = createBrowserHistory();
 
 
@@ -25,7 +26,7 @@ const App = () => {
         <Container >
           <Routes>
             <Route path="/" exact element={<Blog/>} />
-            <Route path="/profile" element={<Profile/>} />
+            <Route path="/post" element={<Post/>} />
           </Routes>
         </Container>
       </div>

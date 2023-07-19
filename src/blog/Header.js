@@ -5,10 +5,12 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
 import LoginButton from '../login/LoginButton';
 import ProfileIcon from '../account/ProfileIcon';
 import { useAuth0 } from "@auth0/auth0-react";
+import PostAddIcon from '@mui/icons-material/PostAdd';
+import { Link as routerLink } from 'react-router-dom';
+import Link from '@mui/material/Link';
 
 const Header = (props) => {
   const { sections, title } = props;
@@ -22,6 +24,9 @@ const Header = (props) => {
   return (
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <IconButton component={routerLink} to="/post">
+          <PostAddIcon />
+        </IconButton>
         <Button size="small">Subscribe</Button>
         <Typography
           component="h2"
