@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import { Container } from "reactstrap";
 import Profile from './profile/Profile';
 import { createBrowserHistory } from 'history';
-import Blog from './blog/Blog';
+import Home from './blog/Home';
 import Post from './posts/Post';
+import Navbar from './blog/Navbar';
 const history = createBrowserHistory();
 
 
@@ -24,8 +25,9 @@ const App = () => {
     <Router >
       <div id="app" >
         <Container >
+        <Navbar title="Blog" />
           <Routes>
-            <Route path="/" exact element={<Blog/>} />
+            <Route path="/" exact element={<Home/>} />
             <Route path="/post" element={<Post/>} />
           </Routes>
         </Container>

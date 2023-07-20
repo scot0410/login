@@ -15,17 +15,9 @@ import Sidebar from './Sidebar';
 // import post3 from './blog-post.3.md';
 import Footer from './Footer';
 import Navbar from './Navbar';
+import Blog from './Blog'
 
-const sections = [
-  { title: 'All Engineering Topics', url: '#' },
-  { title: 'Cloud', url: '#' },
-  { title: 'Message Streaming', url: '#' },
-  { title: 'Backend', url: '#' },
-  { title: 'Web Frontend', url: '#' },
-  { title: 'Mobile', url: '#' },
-  { title: 'Data Science and Databases', url: '#' },
-  { title: 'More...', url: '#' }
-];
+
 
 const mainFeaturedPost = {
   title: 'Title of a longer featured blog post',
@@ -89,23 +81,7 @@ export default function Home() {
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
       <Container maxWidth="lg">
-        <main>
-          <MainFeaturedPost post={mainFeaturedPost} />
-          <Grid container spacing={4}>
-            {featuredPosts.map((post) => (
-              <FeaturedPost key={post.title} post={post} />
-            ))}
-          </Grid>
-          <Grid container spacing={5} sx={{ mt: 3 }}>
-            <Main title="From the firehose" posts={posts} />
-            <Sidebar
-              title={sidebar.title}
-              description={sidebar.description}
-              archives={sidebar.archives}
-              social={sidebar.social}
-            />
-          </Grid>
-        </main>
+        <Blog/>
       </Container>
       <Footer
         title="Footer"
